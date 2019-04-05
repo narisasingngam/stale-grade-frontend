@@ -43,6 +43,7 @@ export default {
 
 <style lang="scss">
 .card {
+  flex: 1;
   border: 1px solid #60626660;
   border-radius: 4px;
   margin: 0 10px;

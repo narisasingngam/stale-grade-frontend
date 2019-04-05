@@ -22,11 +22,7 @@
 .curriculums {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
-}
-
-.Curriculum {
-  flex: 1;
+  margin: 5em;
 }
 </style>
 
