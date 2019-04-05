@@ -17,6 +17,7 @@
   background: url('~assets/img/cover.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .curriculums {
