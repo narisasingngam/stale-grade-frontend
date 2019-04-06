@@ -2,8 +2,8 @@ export const state = () => ({
   users: [
     {
       username: 'smartkung',
-      activeJobs: ['1'],
-      doneJobs: ['2'],
+      activeJobs: ['1', '2', '3', '4'],
+      doneJobs: ['5'],
       role: 'student'
     },
     {

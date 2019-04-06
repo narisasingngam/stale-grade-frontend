@@ -36,10 +36,10 @@ export default {
       jobs: this.$store.state.jobs
     }
   },
-  methods: {},
   mounted() {
     this.$refs.default.$el.click()
-  }
+  },
+  methods: {}
 }
 </script>
 
