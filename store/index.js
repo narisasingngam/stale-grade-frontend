@@ -2,13 +2,13 @@ export const state = () => ({
   users: [
     {
       username: 'smartkung',
-      activeJobs: ['1'],
-      doneJobs: ['2'],
+      activeJobs: [1],
+      doneJobs: [2],
       role: 'student'
     },
     {
       username: 'iamsysadmin',
-      allJobs: ['1', '2'],
+      allJobs: [1, 2],
       role: 'sysad'
     }
   ],
@@ -16,7 +16,8 @@ export const state = () => ({
   jobs: [
     {
       id: 1,
-      title: 'Do this'
+      title: 'Do this',
+      description: 'Minim voluptate mollit ad reprehenderit exercitation sit proident deserunt do culpa eiusmod.'
     },
     {
       id: 2,
