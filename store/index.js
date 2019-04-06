@@ -8,7 +8,9 @@ export const state = () => ({
     },
     {
       username: 'wongnok',
-      role: 'sysad'
+      role: 'sysad',
+      activeJobs: [1, 2],
+      allJobs: [1, 2, 3, 4, 5]
     }
   ],
   currentUser: undefined,
