@@ -1,5 +1,10 @@
 <template>
   <section class="container">
+    <div class="page-nav">
+      <el-button type="text" @click.prevent="back">
+        <i class="el-icon-caret-left" />Back
+      </el-button>
+    </div>
     <div class="head-content">
       <h1>{{ job.title }}</h1>
       <div v-if="isStudent">
@@ -23,17 +28,51 @@
         </el-popover>
       </div>
     </div>
-    <br />
-    <br />
-    Status: {{ job.status }}
-    <br />
-    Due date: {{ job.due }}
-    <br />
-    Company: {{ job.company }}
-    <div><br /><br />{{ job.description }}</div>
+    <div class="subtitle">
+      <strong>Status:</strong> {{ job.status }}
+      <br />
+      <strong>Due:</strong> {{ job.due }}
+      <br />
+      <strong>Company:</strong> {{ job.company }}
+    </div>
+    <div class="description">
+      <h4>Description:</h4>
+      {{ job.description }}
+    </div>
     <NuxtChild />
   </section>
 </template>
+
+<style lang="scss" scoped>
+.container {
+  padding: 7em 18em;
+}
+
+.page-nav {
+  padding: 2em 0;
+}
+
+.head-content {
+  display: flex;
+  align-items: center;
+  h1 {
+    margin-right: 3em;
+    flex: 1;
+  }
+}
+
+.subtitle {
+  margin: 3em 0;
+  line-height: 1.5em;
+}
+
+.description {
+  h4 {
+    margin: 1em 0;
+  }
+  line-height: 1.5em;
+}
+</style>
 
 <script>
 export default {
@@ -59,7 +98,7 @@ export default {
   },
   methods: {
     back() {
-      this.$route.back()
+      this.$router.back()
     },
     acceptJob() {
       this.visible = false
@@ -73,17 +112,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.container {
-  padding: 6em 12em;
-}
-
-.head-content {
-  display: flex;
-  align-items: center;
-  h1 {
-    margin-right: 3em;
-  }
-}
-</style>
