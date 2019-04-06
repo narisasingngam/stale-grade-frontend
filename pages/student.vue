@@ -6,21 +6,21 @@
         :default-active="activeIndex"
         class="tab-menu"
         mode="horizontal"
-        router="true"
+        :router="true"
       >
         <el-menu-item ref="default" index="activeJobs">
           Active Jobs
         </el-menu-item>
         <el-menu-item index="allJobs">All Jobs</el-menu-item>
       </el-menu>
-      <el-autocomplete
+      <!-- <el-autocomplete
         v-model="searchQuery"
         class="inline-input"
         :fetch-suggestions="querySearch"
         prefix-icon="el-icon-search"
         placeholder="Please Input"
         @select="handleSelect"
-      ></el-autocomplete>
+      ></el-autocomplete> -->
     </div>
     <NuxtChild />
   </section>
