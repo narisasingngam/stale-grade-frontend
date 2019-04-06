@@ -11,9 +11,9 @@ import JobCard from '@/components/JobCard.vue'
 export default {
   name: 'AllJobs',
   components: { JobCard },
-  data() {
-    return {
-      jobs: this.$store.state.jobs
+  computed: {
+    jobs() {
+      return this.$store.getters.allJobs
     }
   }
 }

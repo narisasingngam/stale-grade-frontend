@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.push({ path: 'sysAd/activeJobs' })
+    this.$router.push({ path: '/sysAd/activeJobs' })
   }
 }
 </script>
@@ -42,7 +42,6 @@ export default {
   h1 {
     margin-right: 3em;
   }
-
   .tab-menu {
     flex: 1;
   }

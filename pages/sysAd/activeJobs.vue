@@ -1,5 +1,5 @@
 <template>
-  <section class="constainer">
+  <section class="container">
     <div class="flex-grid">
       <JobCard v-for="job in jobs" :key="job.id" :job="job" />
     </div>

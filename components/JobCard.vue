@@ -5,10 +5,17 @@
       <p class="status">
         <i
           :class="
-            job.status === 'Approved' ? 'el-icon-success' : 'el-icon-error'
+            job.approved
+              ? 'el-icon-success'
+              : job.accepted
+              ? 'el-icon-time'
+              : 'el-icon-view'
           "
+          class="approval"
         />
-        {{ job.status }}
+        {{
+          job.approved ? 'Approved' : job.accepted ? 'Pending' : 'Not accepted'
+        }}
         <span class="dim">
           <i class="el-icon-time" /> Due in {{ job.due }}
         </span>
@@ -43,11 +50,17 @@ export default {
   color: rgb(103, 194, 58);
 }
 
-.el-icon-error {
+.el-icon-time.approval {
   color: #f56c6c;
 }
 
 .status {
   margin-top: 1em;
+}
+
+.dim {
+  margin-left: 1em;
+  font-size: 0.8em;
+  color: #22222299;
 }
 </style>

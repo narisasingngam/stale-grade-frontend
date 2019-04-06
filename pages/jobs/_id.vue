@@ -7,7 +7,10 @@
     </div>
     <div class="head-content">
       <h1>{{ job.title }}</h1>
-      <div v-if="isStudent">
+      <div class="buttons" v-if="isStudent">
+        <div v-if="job.accepted">
+          <el-button type="primary" plain>Contact Client</el-button>
+        </div>
         <el-popover v-model="visible" placement="top" width="160">
           <p>You sure to accept this job?</p>
           <div style="text-align: right; margin: 0">
@@ -29,17 +32,19 @@
       </div>
     </div>
     <div class="subtitle">
-      <strong>Status:</strong> {{ job.status }}
-      <br />
-      <strong>Due:</strong> {{ job.due }}
-      <br />
-      <strong>Company:</strong> {{ job.company }}
+      <p>
+        <strong>Status:</strong>
+        {{
+          job.approved ? 'Approved' : job.accepted ? 'Pending' : 'Not accepted'
+        }}
+      </p>
+      <p><strong>Due:</strong> {{ job.due }}</p>
+      <p><strong>Company:</strong> {{ job.company }}</p>
     </div>
     <div class="description">
       <h4>Description:</h4>
       {{ job.description }}
     </div>
-    <NuxtChild />
   </section>
 </template>
 
@@ -72,6 +77,14 @@
   }
   line-height: 1.5em;
 }
+.buttons {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  button {
+    margin: 0 1em;
+  }
+}
 </style>
 
 <script>
@@ -96,6 +109,11 @@ export default {
       return this.jobs.find(j => j.id === this.id) !== undefined
     }
   },
+  mounted() {
+    if (!this.$store.state.currentUser) {
+      this.$router.replace({ name: 'login' })
+    }
+  },
   methods: {
     back() {
       this.$router.back()
@@ -103,11 +121,6 @@ export default {
     acceptJob() {
       this.visible = false
       this.$store.dispatch('addActiveJob', this.job)
-    }
-  },
-  mounted() {
-    if (!this.$store.state.currentUser) {
-      this.$router.replace({ name: 'login' })
     }
   }
 }
