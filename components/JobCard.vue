@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/">
+  <nuxt-link :to="{ path: `/jobs/${job.id}` }">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>Title :</span>
