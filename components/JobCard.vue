@@ -7,6 +7,13 @@
           job.title
         }}</el-button>
       </div>
+      <div>
+        Status: {{ job.status }}
+        <br />
+        Due date: {{ job.due }}
+        <br />
+        Company: {{ job.company }}
+      </div>
     </el-card>
   </nuxt-link>
 </template>
