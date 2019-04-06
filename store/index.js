@@ -12,18 +12,7 @@ export const state = () => ({
       role: 'sysad'
     }
   ],
-  currentUser: undefined,
-  jobs: [
-    {
-      id: 1,
-      title: 'Do this',
-      description: 'Minim voluptate mollit ad reprehenderit exercitation sit proident deserunt do culpa eiusmod.'
-    },
-    {
-      id: 2,
-      title: 'Do that'
-    }
-  ]
+  currentUser: undefined
 })
 
 export const mutations = {
