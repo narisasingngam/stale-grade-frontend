@@ -2,7 +2,9 @@
   <section class="container">
     <el-form ref="form" :model="form" label-position="top">
       <div class="logo-container">
-        <img src="~/assets/v2.svg" class="logo-image" />
+        <nuxt-link :to="{ path: '/' }">
+          <img src="~/assets/v2.svg" class="logo-image" />
+        </nuxt-link>
       </div>
       <el-form-item label="Username">
         <el-input
