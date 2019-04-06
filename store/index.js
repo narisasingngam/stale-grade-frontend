@@ -16,23 +16,38 @@ export const state = () => ({
   jobs: [
     {
       id: 1,
-      title: 'Do this'
+      title: 'Create web application for business',
+      status: 'Not approved',
+      due: '30 days',
+      company: 'wongnnai'
     },
     {
       id: 2,
-      title: 'Do that'
+      title: 'Create data base for stocking goods',
+      status: 'Approved',
+      due: '15 days',
+      company: 'sellsuki'
     },
     {
       id: 3,
-      title: 'Do Those'
+      title: 'Create mobile application about traveller',
+      status: 'Not approved',
+      due: '10 days',
+      company: 'agoda'
     },
     {
       id: 4,
-      title: 'Do These'
+      title: 'Sketch people',
+      status: 'Not approved',
+      due: '10 days',
+      company: 'Din Sor See'
     },
     {
       id: 5,
-      title: 'Do now'
+      title: 'Create game',
+      status: 'Not approve',
+      due: '30 days',
+      company: 'game sanook'
     }
   ]
 })
