@@ -8,7 +8,6 @@ export const state = () => ({
     },
     {
       username: 'iamsysadmin',
-      allJobs: [1, 2],
       role: 'sysad'
     }
   ],
