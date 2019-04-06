@@ -11,7 +11,10 @@
         <el-menu-item index="2">Menu #2</el-menu-item>
       </el-menu>
       <div class="navigation-member">
-        <el-button type="primary" round>Member huh?</el-button>
+        <el-button v-if="user" type="primary" round>
+          {{ user.username }}
+        </el-button>
+        <el-button v-else type="primary" round>Member huh?</el-button>
       </div>
     </nav>
   </section>
@@ -24,6 +27,9 @@ export default {
     return {
       activeIndex: '1'
     }
+  },
+  props: {
+    user: Object
   }
 }
 </script>

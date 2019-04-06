@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <MainNavigation />
+    <MainNavigation
+      :user="{
+        username: 'Want out?'
+      }"
+    />
     <nuxt />
   </div>
 </template>
