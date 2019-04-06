@@ -45,11 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 4em 8em;
-}
-
-.tab-menu {
-  flex: 1;
+  padding: 6em 12em;
 }
 
 .head-content {
@@ -58,5 +54,9 @@ export default {
   h1 {
     margin-right: 3em;
   }
+}
+
+.tab-menu {
+  flex: 1;
 }
 </style>

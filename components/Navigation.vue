@@ -2,7 +2,7 @@
   <section class="container">
     <nav class="main-navigation">
       <div class="nav-logo">
-        <h1>LOGO</h1>
+        <img class="nav-logo-image" src="~/assets/v2.svg" />
       </div>
       <div class="nav-logout">
         <el-button type="danger" round @click="logout">Log out</el-button>
@@ -25,17 +25,21 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  background: pink;
+  background: #c0ffee;
 }
 
 .main-navigation {
   display: flex;
-  padding: 3em 6em;
+  padding: 1.5em 6em;
 }
 
 .nav-logo {
   flex: 1;
   display: flex;
   align-items: center;
+}
+
+.nav-logo-image {
+  height: 40px;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <section class="container">
     <el-form ref="form" :model="form" label-position="top">
+      <div class="logo-container">
+        <img src="~/assets/v2.svg" class="logo-image" />
+      </div>
       <el-form-item label="Username">
         <el-input
           ref="usernameField"
@@ -64,13 +67,18 @@ export default {
   align-items: center;
   text-align: center;
 
-  background: pink;
+  background: #c0ffee;
 }
 
 .el-form {
   padding: 6em 12em;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  margin-bottom: 2em;
+}
+
+.logo-image {
+  height: 100px;
 }
 </style>
