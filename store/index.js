@@ -86,6 +86,15 @@ export const mutations = {
   },
   addActiveJob(state, job) {
     state.currentUser.activeJobs.push(job.id)
+  },
+  addJobs(state, payload) {
+    state.jobs.push({
+      id: payload.id,
+      title: payload.title,
+      due: payload.due,
+      company: payload.company,
+      description: payload.description
+    })
   }
 }
 export const actions = {
