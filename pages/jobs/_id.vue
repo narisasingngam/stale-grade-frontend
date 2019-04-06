@@ -22,6 +22,26 @@
           </el-button>
         </el-popover>
       </div>
+      <div v-else>
+        <el-popover v-model="visible" placement="top" width="160">
+          <p>You sure to accept this job?</p>
+          <div style="text-align: right; margin: 0">
+            <el-button size="mini" type="text" @click="visible = false"
+              >cancel</el-button
+            >
+            <el-button type="primary" size="mini" @click="acceptJob"
+              >confirm</el-button
+            >
+          </div>
+          <el-button
+            slot="reference"
+            :type="!isActiveJob ? 'primary' : 'danger'"
+            :disabled="isActiveJob"
+          >
+            {{ !isActiveJob ? 'Approve' : 'Approve' }}
+          </el-button>
+        </el-popover>
+      </div>
     </div>
     <br />
     <br />

@@ -10,7 +10,7 @@ export const state = () => ({
       username: 'wongnok',
       role: 'sysad',
       activeJobs: [1, 2],
-      allJobs: [1, 2, 3, 4, 5]
+      allJobs: [0, 1, 2, 3, 4]
     }
   ],
   currentUser: undefined,
@@ -88,7 +88,6 @@ export const mutations = {
     state.currentUser.activeJobs.push(job.id)
   }
 }
-
 export const actions = {
   login({ commit }, user) {
     commit('setCurrentUser', user)
