@@ -3,8 +3,8 @@
     <el-form ref="form" :model="form" label-position="top">
       <el-form-item label="Username">
         <el-input
-          v-model="form.username"
           ref="usernameField"
+          v-model="form.username"
           placeholder="Username"
         ></el-input>
       </el-form-item>
@@ -42,7 +42,7 @@ export default {
           this.$store.dispatch('login', user)
           this.userExist = true
           this.$router.push({
-            name: user.role === 'sysad' ? 'sysAdIndex' : 'studentIndex'
+            name: user.role === 'sysad' ? 'sysAd' : 'student'
           })
         }
       }

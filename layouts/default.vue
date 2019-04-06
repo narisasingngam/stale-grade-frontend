@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navigation />
     <nuxt />
   </div>
 </template>
@@ -23,4 +24,17 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+}
 </style>
+
+<script>
+import Navigation from '@/components/Navigation.vue'
+export default {
+  components: {
+    Navigation
+  }
+}
+</script>
