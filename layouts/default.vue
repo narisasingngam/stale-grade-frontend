@@ -35,6 +35,16 @@ import Navigation from '@/components/Navigation.vue'
 export default {
   components: {
     Navigation
+  },
+  computed: {
+    user() {
+      return this.$store.state.currentUser
+    }
+  },
+  mounted() {
+    if (!this.$store.state.currentUser) {
+      this.$router.replace({ name: 'login' })
+    }
   }
 }
 </script>

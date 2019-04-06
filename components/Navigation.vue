@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  background: #c0ffee;
+  background: #9ad8d3;
 }
 
 .main-navigation {

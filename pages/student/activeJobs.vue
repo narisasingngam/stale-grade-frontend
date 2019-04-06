@@ -1,10 +1,17 @@
 <template>
   <section class="container">
-    <h1>Active Jobs</h1>
-    <br />
-    <JobCard v-for="job in jobs" :key="job.id" :job="job" />
+    <div class="flex-grid">
+      <JobCard v-for="job in jobs" :key="job.id" :job="job" />
+    </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
 
 <script>
 import JobCard from '@/components/JobCard.vue'

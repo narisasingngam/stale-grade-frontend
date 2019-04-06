@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <el-form ref="form" :model="form" label-position="top">
+    <el-form ref="form" :model="form" label-position="left">
       <div class="logo-container">
         <nuxt-link :to="{ path: '/' }">
           <img src="~/assets/v2.svg" class="logo-image" />
@@ -21,7 +21,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">Login</el-button>
+        <el-button type="primary" @click="onSubmit" round>Login</el-button>
       </el-form-item>
     </el-form>
   </section>
@@ -68,12 +68,20 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  background: #c0ffee;
+  background-image: linear-gradient(
+    to right bottom,
+    #c0ffee,
+    #acece1,
+    #9ad8d3,
+    #89c5c5,
+    #79b2b7
+  );
 }
 
 .el-form {
-  padding: 6em 12em;
+  padding: 5em 18em;
+  background: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-container {
