@@ -6,7 +6,7 @@
         :default-active="activeIndex"
         class="tab-menu"
         mode="horizontal"
-        router="true"
+        :router="true"
       >
         <el-menu-item ref="default" index="activeJobs">
           Active Jobs
