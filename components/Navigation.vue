@@ -5,7 +5,7 @@
         <h1>LOGO</h1>
       </div>
       <div class="nav-logout">
-        <el-button type="danger" round>Log out</el-button>
+        <el-button type="danger" round @click="logout">Log out</el-button>
       </div>
     </nav>
   </section>
