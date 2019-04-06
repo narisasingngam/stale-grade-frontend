@@ -13,7 +13,13 @@
 
 <script>
 export default {
-  name: 'Navigation'
+  name: 'Navigation',
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+      this.$router.push({ name: 'login' })
+    }
+  }
 }
 </script>
 

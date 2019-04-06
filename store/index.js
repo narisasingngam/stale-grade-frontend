@@ -46,5 +46,8 @@ export const mutations = {
 export const actions = {
   login({ commit }, user) {
     commit('setCurrentUser', user)
+  },
+  logout({ commit }) {
+    commit('setCurrentUser', undefined)
   }
 }
