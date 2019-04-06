@@ -3,11 +3,7 @@
 </template>
 
 <script>
-export default {
-  mounted() {
-    this.$router.replace({ name: 'login' })
-  }
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>

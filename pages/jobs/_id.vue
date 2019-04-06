@@ -3,8 +3,7 @@
     <div class="head-content">
       <h1>{{ job.title }}</h1>
       <div v-if="isStudent">
-        <!-- <div v-if="isActiveJob"> -->
-        <el-popover placement="top" width="160" v-model="visible">
+        <el-popover v-model="visible" placement="top" width="160">
           <p>You sure to accept this job?</p>
           <div style="text-align: right; margin: 0">
             <el-button size="mini" type="text" @click="visible = false"
@@ -22,7 +21,6 @@
             {{ !isActiveJob ? 'Accept job' : 'Accepted' }}
           </el-button>
         </el-popover>
-        <!-- </div> -->
       </div>
     </div>
     <br />
@@ -66,6 +64,11 @@ export default {
     acceptJob() {
       this.visible = false
       this.$store.dispatch('addActiveJob', this.job)
+    }
+  },
+  mounted() {
+    if (!this.$store.state.currentUser) {
+      this.$router.replace({ name: 'login' })
     }
   }
 }

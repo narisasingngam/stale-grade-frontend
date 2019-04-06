@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .flex-grid > a {
-  flex-basis: 50%;
+  flex-basis: 100%;
   padding: 1em 1em;
 }
 
