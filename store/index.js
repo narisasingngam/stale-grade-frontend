@@ -2,13 +2,13 @@ export const state = () => ({
   users: [
     {
       username: 'smartkung',
-      activeJobs: ['1', '2', '3', '4'],
-      doneJobs: ['5'],
+      activeJobs: [1],
+      doneJobs: [2],
       role: 'student'
     },
     {
       username: 'iamsysadmin',
-      allJobs: ['1', '2'],
+      allJobs: [1, 2],
       role: 'sysad'
     }
   ],
