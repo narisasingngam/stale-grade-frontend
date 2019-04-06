@@ -3,7 +3,7 @@ export const state = () => ({
     {
       username: 'smartkung',
       activeJobs: [1, 2, 3, 4],
-      doneJobs: [5],
+      doneJobs: [0],
       role: 'student'
     },
     {
@@ -14,7 +14,7 @@ export const state = () => ({
   currentUser: undefined,
   jobs: [
     {
-      id: 1,
+      id: 0,
       title: 'Create web application for business',
       status: 'Not approved',
       due: '30 days',
@@ -26,7 +26,7 @@ Magna sunt cupidatat sit voluptate tempor consectetur enim Lorem nulla. Cupidata
       `
     },
     {
-      id: 2,
+      id: 1,
       title: 'Create data base for stocking goods',
       status: 'Approved',
       due: '15 days',
@@ -40,7 +40,7 @@ Qui mollit minim laboris incididunt tempor tempor amet amet velit ex consectetur
       `
     },
     {
-      id: 3,
+      id: 2,
       title: 'Create mobile application about traveller',
       status: 'Not approved',
       due: '10 days',
@@ -52,7 +52,7 @@ Ipsum dolor quis Lorem pariatur pariatur occaecat anim sit ea ullamco labore. Oc
       `
     },
     {
-      id: 4,
+      id: 3,
       title: 'Sketch people',
       status: 'Not approved',
       due: '10 days',
@@ -64,7 +64,7 @@ Ea veniam reprehenderit ea in aute aliqua nisi est dolore veniam fugiat. Proiden
       `
     },
     {
-      id: 5,
+      id: 4,
       title: 'Create game',
       status: 'Not approve',
       due: '30 days',
@@ -81,6 +81,9 @@ Duis cupidatat culpa sunt velit duis occaecat consectetur irure quis enim dolore
 export const mutations = {
   setCurrentUser(state, user) {
     state.currentUser = user
+  },
+  addActiveJob(state, job) {
+    state.currentUser.activeJobs.push(job.id)
   }
 }
 
@@ -90,6 +93,9 @@ export const actions = {
   },
   logout({ commit }) {
     commit('setCurrentUser', undefined)
+  },
+  addActiveJob({ commit }, job) {
+    commit('addActiveJob', job)
   }
 }
 
