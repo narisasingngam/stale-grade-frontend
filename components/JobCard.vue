@@ -8,11 +8,11 @@
         }}</el-button>
       </div>
       <div>
-        {{ job.status }}
+        Status: {{ job.status }}
         <br />
-        {{ job.due }}
+        Due date: {{ job.due }}
         <br />
-        {{ job.company }}
+        Company: {{ job.company }}
       </div>
     </el-card>
   </nuxt-link>

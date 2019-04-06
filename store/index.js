@@ -2,7 +2,7 @@ export const state = () => ({
   users: [
     {
       username: 'smartkung',
-      activeJobs: ['1', '2', '3', '4'],
+      activeJobs: [1, 2, 3, 4],
       doneJobs: ['5'],
       role: 'student'
     },
@@ -64,5 +64,15 @@ export const actions = {
   },
   logout({ commit }) {
     commit('setCurrentUser', undefined)
+  }
+}
+
+export const getters = {
+  userActiveJob: state => {
+    const activeJobs = []
+    for (const i of state.currentUser.activeJobs) {
+      activeJobs.push(state.jobs[i])
+    }
+    return activeJobs
   }
 }
