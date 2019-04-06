@@ -8,11 +8,10 @@ export const state = () => ({
     },
     {
       username: 'iamsysadmin',
-      allJobs: [1, 2],
       role: 'sysad'
     }
   ],
-  currentUser: undefined
+  currentUser: undefined,
 })
 
 export const mutations = {
