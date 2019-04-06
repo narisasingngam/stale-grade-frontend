@@ -20,9 +20,6 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
-  router: {
-    middleware: ['auth']
-  },
 
   /*
    ** Global CSS
@@ -39,8 +36,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/axios'
   ],
   auth: {
     watchLoggedIn: true

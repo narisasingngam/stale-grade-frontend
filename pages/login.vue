@@ -2,7 +2,11 @@
   <section class="container">
     <el-form ref="form" :model="form" label-position="top">
       <el-form-item label="Username">
-        <el-input v-model="form.username" placeholder="Username"></el-input>
+        <el-input
+          v-model="form.username"
+          ref="usernameField"
+          placeholder="Username"
+        ></el-input>
       </el-form-item>
       <el-form-item label="Password">
         <el-input
@@ -26,12 +30,26 @@ export default {
       form: {
         username: '',
         password: ''
-      }
+      },
+      allUser: this.$store.state.users,
+      userExist: false
     }
   },
   methods: {
     onSubmit() {
-      this.$router.push({ name: 'index' })
+      for (const user of this.allUser) {
+        if (user.username === this.form.username) {
+          this.$store.dispatch('login', user)
+          this.userExist = true
+          this.$router.push({
+            name: user.role === 'sysad' ? 'sysAdIndex' : 'studentIndex'
+          })
+        }
+      }
+
+      if (!this.userExist) {
+        this.$message.error('Username/Password combination was incorrect')
+      }
     }
   }
 }
