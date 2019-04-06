@@ -10,6 +10,7 @@
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
+  align-content: space-between;
 }
 </style>
 

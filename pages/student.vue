@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 6em 12em;
+  padding: 5em 10em;
 }
 
 .head-content {

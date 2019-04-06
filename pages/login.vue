@@ -21,7 +21,7 @@
         ></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit" round>Login</el-button>
+        <el-button type="primary" round @click="onSubmit">Login</el-button>
       </el-form-item>
     </el-form>
   </section>
