@@ -8,12 +8,12 @@
 <script>
 import JobCard from '@/components/JobCard.vue'
 export default {
+  name: 'AllJobs',
+  components: { JobCard },
   data() {
     return {
       jobs: this.$store.state.jobs
     }
-  },
-  components: { JobCard },
-  name: 'AllJobs'
+  }
 }
 </script>

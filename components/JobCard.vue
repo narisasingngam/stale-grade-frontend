@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/">
+  <nuxt-link :to="{ path: `/jobs/${job.id - 1}` }">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>Title :</span>
@@ -22,7 +22,10 @@
 export default {
   name: 'JobCard',
   props: {
-    job: Object
+    job: {
+      type: Object,
+      default: undefined
+    }
   }
 }
 </script>
@@ -31,20 +34,4 @@ export default {
 .box-card {
   flex-basis: 33.3%;
 }
-/* .clearfix:before,
-.clearfix:after {
-  display: table;
-  content: '';
-}
-.clearfix:after {
-  clear: both;
-}
-.item {
-  margin-bottom: 18px;
-}
-/*  */
-/* .box-card {
-  height: 200px;
-  width: 100px;
-} */
 </style>

@@ -69,6 +69,7 @@ export const actions = {
 export const getters = {
   userActiveJob: state => {
     const activeJobs = []
+    if (!state.currentUser) return []
     for (const i of state.currentUser.activeJobs) {
       activeJobs.push(state.jobs[i])
     }
