@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.replace({ path: '/student/activeJobs' })
+    this.$router.push({ path: '/student/activeJobs' })
   },
   methods: {}
 }
