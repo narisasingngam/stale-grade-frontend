@@ -13,14 +13,14 @@
         </el-menu-item>
         <el-menu-item index="allJobs">All Jobs</el-menu-item>
       </el-menu>
-      <el-autocomplete
+      <!-- <el-autocomplete
         v-model="searchQuery"
         class="inline-input"
         :fetch-suggestions="querySearch"
         prefix-icon="el-icon-search"
         placeholder="Please Input"
         @select="handleSelect"
-      ></el-autocomplete>
+      ></el-autocomplete> -->
     </div>
     <NuxtChild />
   </section>
@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.replace({ path: '/student/activeJobs' })
+    this.$router.push({ path: '/student/activeJobs' })
   },
   methods: {}
 }
