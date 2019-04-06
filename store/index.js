@@ -7,7 +7,7 @@ export const state = () => ({
       role: 'student'
     },
     {
-      username: 'iamsysadmin',
+      username: 'wongnok',
       role: 'sysad'
     }
   ],
