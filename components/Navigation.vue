@@ -2,7 +2,9 @@
   <section class="container">
     <nav class="main-navigation">
       <div class="nav-logo">
-        <img class="nav-logo-image" src="~/assets/v2.svg" />
+        <nuxt-link to="/student/activeJobs">
+          <img class="nav-logo-image" src="~/assets/v2.svg" />
+        </nuxt-link>
       </div>
       <div class="nav-logout">
         <el-button type="danger" round @click="logout">Log out</el-button>
@@ -38,7 +40,9 @@ export default {
   display: flex;
   align-items: center;
 }
-
+.logo-button {
+  background: #9ad8d3;
+}
 .nav-logo-image {
   height: 40px;
 }
