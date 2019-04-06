@@ -85,6 +85,9 @@ export const mutations = {
   },
   addActiveJob(state, job) {
     state.currentUser.activeJobs.push(job.id)
+  },
+  setApproved(state, job) {
+    state.jobs[job.id].approved = true
   }
 }
 export const actions = {
@@ -96,6 +99,9 @@ export const actions = {
   },
   addActiveJob({ commit }, job) {
     commit('addActiveJob', job)
+  },
+  setApproved({ commit }, job) {
+    commit('setApproved', job)
   }
 }
 

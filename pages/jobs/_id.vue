@@ -7,7 +7,7 @@
     </div>
     <div class="head-content">
       <h1>{{ job.title }}</h1>
-      <div class="buttons" v-if="isStudent">
+      <div v-if="isStudent" class="buttons">
         <div v-if="job.accepted">
           <el-button type="primary" plain>Contact Client</el-button>
         </div>
@@ -30,23 +30,23 @@
           </el-button>
         </el-popover>
       </div>
-      <div v-else>
+      <div v-if="!isStudent && job.accepted">
         <el-popover v-model="visible" placement="top" width="160">
-          <p>You sure to accept this job?</p>
+          <p>You sure to approve this job?</p>
           <div style="text-align: right; margin: 0">
             <el-button size="mini" type="text" @click="visible = false"
               >cancel</el-button
             >
-            <el-button type="primary" size="mini" @click="acceptJob"
+            <el-button type="primary" size="mini" @click="approveJob"
               >confirm</el-button
             >
           </div>
           <el-button
             slot="reference"
-            :type="!isActiveJob ? 'primary' : 'danger'"
-            :disabled="isActiveJob"
+            :type="!isApproved ? 'primary' : 'danger'"
+            :disabled="job.accepted && isApproved"
           >
-            {{ !isActiveJob ? 'Approve' : 'Approve' }}
+            {{ !isApproved ? 'Approve' : 'Approved' }}
           </el-button>
         </el-popover>
       </div>
@@ -125,8 +125,8 @@ export default {
     isStudent() {
       return this.$store.state.currentUser.role === 'student'
     },
-    isActiveJob() {
-      return this.jobs.find(j => j.id === this.id) !== undefined
+    isApproved() {
+      return this.job.approved
     }
   },
   mounted() {
@@ -138,9 +138,9 @@ export default {
     back() {
       this.$router.back()
     },
-    acceptJob() {
+    approveJob() {
       this.visible = false
-      this.$store.dispatch('addActiveJob', this.job)
+      this.$store.dispatch('setApproved', this.job)
     }
   }
 }

@@ -24,4 +24,13 @@ export default {
   flex-wrap: wrap;
   align-content: space-between;
 }
+
+.go-top {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  &.hidden {
+    display: none;
+  }
+}
 </style>

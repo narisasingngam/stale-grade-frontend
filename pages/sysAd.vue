@@ -51,6 +51,13 @@
       </el-dialog>
     </div>
     <NuxtChild />
+    <el-button
+      class="go-top"
+      type="primary"
+      round
+      icon="el-icon-arrow-up"
+      @click.native="scrollToTop"
+    ></el-button>
   </section>
 </template>
 
@@ -74,7 +81,10 @@ export default {
     this.$router.push({ path: '/sysAd/activeJobs' })
   },
   methods: {
-    save() {}
+    save() {},
+    scrollToTop() {
+      window.scrollTo(0, 0)
+    }
   }
 }
 </script>
@@ -82,15 +92,30 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 5em 10em;
+  position: relative;
 }
+
 .head-content {
   display: flex;
+  top: 0;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 1;
   align-items: center;
   h1 {
     margin-right: 3em;
   }
   .tab-menu {
     flex: 1;
+  }
+}
+
+.go-top {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  &.hidden {
+    display: none;
   }
 }
 </style>
