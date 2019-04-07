@@ -26,22 +26,19 @@
         <el-form
           :label-position="labelPosition"
           label-width="100px"
-          :model="formLabelAlign"
+          v-model="form"
         >
           <el-form-item label="Title">
-            <el-input v-model="formLabelAlign.title"></el-input>
+            <el-input v-model="form.title"></el-input>
           </el-form-item>
           <el-form-item label="Due Date">
-            <el-input v-model="formLabelAlign.date"></el-input>
+            <el-input v-model="form.due"></el-input>
           </el-form-item>
           <el-form-item label="Company">
-            <el-input v-model="formLabelAlign.company"></el-input>
+            <el-input v-model="form.company"></el-input>
           </el-form-item>
           <el-form-item label="Description">
-            <el-input
-              v-model="formLabelAlign.description"
-              type="textarea"
-            ></el-input>
+            <el-input v-model="form.description" type="textarea"></el-input>
           </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
@@ -69,9 +66,10 @@ export default {
       activeIndex: 'activeJobs',
       centerDialogVisible: false,
       labelPosition: 'right',
-      formLabelAlign: {
+      form: {
+        id: this.$store.state.jobs.length,
         title: '',
-        date: '',
+        due: '',
         company: '',
         description: ''
       }
@@ -81,9 +79,12 @@ export default {
     this.$router.push({ path: '/sysAd/activeJobs' })
   },
   methods: {
-    save() {},
     scrollToTop() {
       window.scrollTo(0, 0)
+    },
+    save() {
+      this.centerDialogVisible = false
+      this.$store.commit('addJobs', this.form)
     }
   }
 }
