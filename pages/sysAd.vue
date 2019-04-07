@@ -13,9 +13,7 @@
         </el-menu-item>
         <el-menu-item index="allJobs">All Jobs</el-menu-item>
       </el-menu>
-      <el-button type="text" @click="centerDialogVisible = true"
-        >New jobs</el-button
-      >
+      <el-button type="text" @click="dialogVisible = true">New jobs</el-button>
       <el-dialog
         title="Add new jobs"
         :visible.sync="centerDialogVisible"
