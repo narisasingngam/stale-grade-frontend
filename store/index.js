@@ -3,7 +3,7 @@ export const state = () => ({
     {
       username: 'smartkung',
       activeJobs: [1, 2, 3, 4],
-      doneJobs: [0],
+      doneJobs: [0, 1, 2],
       role: 'student'
     },
     {
