@@ -38,6 +38,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
+  auth: {
+    watchLoggedIn: true
+  },
   /*
    ** Axios module configuration
    */
